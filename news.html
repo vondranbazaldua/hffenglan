@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#04060b">
+<title>Studio News & Engineering Notes — hffenglan</title>
+<meta name="description" content="Releases, post-mortems, engineering notes and product updates from the hffenglan studio in Exeter, UK. Updated monthly.">
+<meta name="keywords" content="hffenglan news, app release notes, engineering blog, indie studio Exeter, privacy-first updates">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://hffenglan.com/news.html">
+<meta property="og:title" content="Studio News & Engineering Notes — hffenglan">
+<meta property="og:description" content="Releases, post-mortems and product updates from the hffenglan studio.">
+<meta property="og:url" content="https://hffenglan.com/news.html">
+<meta property="og:image" content="https://hffenglan.com/images/og-cover.png">
+<meta property="og:type" content="blog">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="images/logo.svg">
+<link rel="alternate icon" href="images/favicon.svg">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/extras.css">
+<link rel="stylesheet" href="css/animations.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Blog","name":"hffenglan Studio News","url":"https://hffenglan.com/news.html","publisher":{"@type":"Organization","name":"hffenglan","url":"https://hffenglan.com/"},"inLanguage":"en-GB"}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" role="banner">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="index.html" aria-label="hffenglan home">
+      <img src="images/logo.svg" alt="hffenglan" height="38">
+    </a>
+    <nav class="nav__menu" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="advantages.html">Advantages</a>
+      <a href="news.html">News</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="nav__cta" href="contact.html">
+      <span>Start a project</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12 H19 M13 6 L19 12 L13 18"/></svg>
+    </a>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7 H20 M4 12 H20 M4 17 H20"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="wrap page-hero__inner">
+    <span class="eyebrow">Studio News · Jun 2026</span>
+    <h1>Engineering notes, releases, <span class="grad-shift">post-mortems</span>.</h1>
+    <p class="lead">A monthly digest of what we shipped, what we learned, and what we cut. We publish the numbers and we publish the receipts.</p>
+    <div class="news__stats">
+      <div><b>47</b><small>Articles published</small></div>
+      <div><b>9.4k</b><small>Monthly readers</small></div>
+      <div><b>24</b><small>Post-mortems</small></div>
+      <div><b>4.9★</b><small>Subscriber rating</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED ARTICLE ============ -->
+<section class="section news-featured">
+  <div class="wrap">
+    <div class="news-featured__wrap reveal">
+      <div class="news-featured__media">
+        <svg viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Featured article: ClauseKit 3.4 — procedural waveform visualisation">
+          <defs>
+            <linearGradient id="fgrad1" x1="0" x2="1"><stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#7c5cff"/></linearGradient>
+            <linearGradient id="fgrad2" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#070a14"/><stop offset="1" stop-color="#020409"/></linearGradient>
+            <radialGradient id="frg1" cx=".2" cy=".25" r=".6"><stop offset="0" stop-color="#00d4ff" stop-opacity=".5"/><stop offset="1" stop-color="#00d4ff" stop-opacity="0"/></radialGradient>
+            <radialGradient id="frg2" cx=".8" cy=".75" r=".55"><stop offset="0" stop-color="#ff3ea5" stop-opacity=".35"/><stop offset="1" stop-color="#ff3ea5" stop-opacity="0"/></radialGradient>
+            <pattern id="fgrid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0 H0 V48" fill="none" stroke="rgba(140,170,220,.08)"/></pattern>
+            <filter id="fglow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <rect width="1200" height="720" fill="url(#fgrad2)"/>
+          <rect width="1200" height="720" fill="url(#fgrid)"/>
+          <rect width="1200" height="720" fill="url(#frg1)"/>
+          <rect width="1200" height="720" fill="url(#frg2)"/>
+
+          <g transform="translate(80 90)">
+            <rect width="240" height="32" rx="16" fill="rgba(255,62,165,.10)" stroke="rgba(255,62,165,.5)"/>
+            <text x="120" y="21" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#ffb6dd" font-weight="600" letter-spacing="3">FEATURED · RELEASE</text>
+          </g>
+          <text x="80" y="200" font-family="-apple-system,sans-serif" font-size="56" font-weight="800" fill="#fff" letter-spacing="-2">ClauseKit 3.4 ships</text>
+          <text x="80" y="262" font-family="-apple-system,sans-serif" font-size="56" font-weight="800" fill="url(#fgrad1)" letter-spacing="-2">offline AI clauses.</text>
+          <text x="80" y="320" font-family="-apple-system,sans-serif" font-size="20" fill="#b9c4d6">Local clause library · OCR for scanned PDFs · Signed PDF export</text>
+
+          <g transform="translate(80 380)" filter="url(#fglow)">
+            <path d="M0 60 C60 10 120 110 180 60 S300 10 360 60 S480 110 540 60 S660 10 720 60 S840 110 900 60 S1020 10 1040 60" fill="none" stroke="url(#fgrad1)" stroke-width="4" stroke-linecap="round"/>
+          </g>
+          <g transform="translate(80 400)" opacity=".5">
+            <path d="M0 60 C60 10 120 110 180 60 S300 10 360 60 S480 110 540 60 S660 10 720 60 S840 110 900 60 S1020 10 1040 60" fill="none" stroke="url(#fgrad1)" stroke-width="1.5" stroke-dasharray="4 6"/>
+          </g>
+
+          <g transform="translate(80 520)" font-family="JetBrains Mono, monospace" font-size="14" fill="#a4e8ff">
+            <rect width="420" height="72" rx="12" fill="rgba(13,19,37,.85)" stroke="rgba(140,170,220,.18)"/>
+            <text x="20" y="28">[01:24:09] SAMPLE RATE 48kHz · BUFFER 256</text>
+            <text x="20" y="56" fill="#94a3b8">[01:24:09] LATENCY 5.3ms · ON-DEVICE ONLY</text>
+          </g>
+
+          <g transform="translate(820 540)" opacity=".55">
+            <circle r="120" fill="url(#fgrad1)" opacity=".18"/>
+          </g>
+        </svg>
+      </div>
+      <div class="news-featured__body">
+        <span class="news__cat news__cat--feat">Release · v3.4.1 · 22 Jun 2026</span>
+        <h2>ClauseKit 3.4 — offline AI clauses, on-device OCR, signed exports.</h2>
+        <p>Our contract validator gets a local clause library, OCR for scanned PDFs, and signed export — all generated on-device via CoreML. No upload, no telemetry, no third-party language services. The full release is live on the App Store today.</p>
+        <div class="news-featured__tags">
+          <span>iOS · macOS</span>
+          <span>CoreML · 22ms inference</span>
+          <span>PDF · OCR · Signed</span>
+        </div>
+        <ul class="news-featured__points">
+          <li><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12 L10 17 L19 7"/></svg></span><span><b>Zero data leaves device.</b> Clauses, OCR, signatures all run on the Apple Neural Engine.</span></li>
+          <li><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12 L10 17 L19 7"/></svg></span><span><b>22ms median inference</b> on iPhone 13 and later — no cloud round-trips.</span></li>
+          <li><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12 L10 17 L19 7"/></svg></span><span><b>Backwards-compatible.</b> v3.3 project files open seamlessly in v3.4.</span></li>
+        </ul>
+        <div class="news-featured__cta">
+          <a class="btn btn--primary shine" href="#post">Read the full post
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12 H19 M13 6 L19 12 L13 18"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="services.html#contract">All ClauseKit capabilities</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FILTERS ============ -->
+<section class="section section--filters">
+  <div class="wrap">
+    <div class="news__bar">
+      <div>
+        <h3 class="news__bar__title">Latest updates</h3>
+        <p class="news__bar__sub">Filtered by category · click a card to read in full</p>
+      </div>
+      <div class="news__filters filters" role="tablist">
+        <button class="active" data-filter="all">All <sup>12</sup></button>
+        <button data-filter="release">Releases <sup>4</sup></button>
+        <button data-filter="engineering">Engineering <sup>3</sup></button>
+        <button data-filter="studio">Studio <sup>2</sup></button>
+        <button data-filter="press">Press & talks <sup>2</sup></button>
+        <button data-filter="open">Open source <sup>1</sup></button>
+      </div>
+    </div>
+
+    <!-- ============ NEWS GRID ============ -->
+    <div class="news" data-stagger>
+
+      <article class="news__card tilt" data-cat="engineering">
+        <div class="news__thumb news__thumb--audio" aria-hidden="true">
+          <svg viewBox="0 0 100 60" fill="none"><path d="M0 30 L8 28 L12 32 L16 14 L20 46 L24 18 L28 42 L32 24 L36 38 L40 22 L44 34 L48 30 L52 26 L56 32 L60 22 L64 36 L68 24 L72 30 L76 28 L80 32 L84 26 L88 30 L92 28 L100 30" stroke="url(#audg1)" stroke-width="1.5" stroke-linecap="round"/><defs><linearGradient id="audg1" x1="0" x2="1"><stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#7c5cff"/></linearGradient></defs></svg>
+        </div>
+        <div class="news__body">
+          <span class="news__cat">Engineering · 14 Jun 2026</span>
+          <h3><a href="#post">On-device DSP: how we hit sub-5ms audio latency on mid-range hardware</a></h3>
+          <p>A write-up of the lock-free ring buffer, drop-out watchdog and SIMD-tuned biquad cascade we use across our procedural audio apps. Includes benchmarks on five devices and full repo links.</p>
+          <div class="news__meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L15 14"/></svg> 12 min read</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="12" cy="12" r="3"/></svg> Audio DSP</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 12 L11 14 L15 10"/></svg> C++ · Rust</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="news__card tilt" data-cat="studio">
+        <div class="news__thumb news__thumb--team" aria-hidden="true">
+          <svg viewBox="0 0 100 60" fill="none"><circle cx="22" cy="20" r="8" fill="rgba(0,212,255,.5)"/><circle cx="42" cy="22" r="6" fill="rgba(124,92,255,.5)"/><path d="M8 50 C8 38 16 32 22 32 C28 32 36 38 36 50 Z" fill="rgba(0,212,255,.35)"/><path d="M30 50 C30 42 36 38 42 38 C48 38 54 42 54 50 Z" fill="rgba(124,92,255,.35)"/><circle cx="68" cy="22" r="6" fill="rgba(255,62,165,.5)"/><path d="M56 50 C56 42 62 38 68 38 C74 38 80 42 80 50 Z" fill="rgba(255,62,165,.35)"/></svg>
+        </div>
+        <div class="news__body">
+          <span class="news__cat">Studio · 02 Jun 2026</span>
+          <h3><a href="#post">Welcoming two new senior engineers to the Exeter studio</a></h3>
+          <p>A short introduction to our newest team members: a privacy-engineering specialist joining from a UK regulator, and a graphics engineer from a games studio. Both senior, both full-time, both local.</p>
+          <div class="news__meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L15 14"/></svg> 4 min read</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.5"/><path d="M5 21 V19 C5 16 8 14 12 14 C16 14 19 16 19 19 V21"/></svg> Team</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="news__card tilt" data-cat="release">
+        <div class="news__thumb news__thumb--film" aria-hidden="true">
+          <svg viewBox="0 0 100 60" fill="none"><defs><linearGradient id="flm1" x1="0" x2="1"><stop offset="0" stop-color="#ff3ea5"/><stop offset="1" stop-color="#7c5cff"/></linearGradient></defs><rect x="4" y="14" width="92" height="32" rx="6" fill="rgba(255,62,165,.10)" stroke="rgba(255,62,165,.45)"/><g transform="translate(14 22)"><circle cx="6" cy="8" r="4" fill="url(#flm1)"/></g><g transform="translate(28 26)"><rect width="20" height="8" rx="2" fill="rgba(124,92,255,.4)"/></g><g transform="translate(56 18)"><rect width="14" height="14" rx="2" fill="rgba(0,212,255,.4)"/></g><g transform="translate(76 28)"><rect width="14" height="6" rx="1" fill="rgba(255,62,165,.5)"/></g></svg>
+        </div>
+        <div class="news__body">
+          <span class="news__cat">Release · 19 May 2026</span>
+          <h3><a href="#post">Halation 2.7: film stocks archive + non-destructive export pipeline</a></h3>
+          <p>An ambitious release that ships the entire film stock archive in 6 MB, plus a new non-destructive stack-based export pipeline that future-proofs user projects across releases.</p>
+          <div class="news__meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L15 14"/></svg> 5 min read</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="12" cy="12" r="3"/></svg> Creator</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 12 L11 14 L15 10"/></svg> v2.7</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="news__card tilt" data-cat="engineering">
+        <div class="news__thumb news__thumb--perf" aria-hidden="true">
+          <svg viewBox="0 0 100 60" fill="none"><defs><linearGradient id="perf1" x1="0" x2="1"><stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#7c5cff"/></linearGradient></defs><rect x="6" y="34" width="6" height="16" rx="2" fill="rgba(0,212,255,.4)"/><rect x="20" y="22" width="6" height="28" rx="2" fill="rgba(0,212,255,.55)"/><rect x="34" y="14" width="6" height="36" rx="2" fill="rgba(124,92,255,.6)"/><rect x="48" y="20" width="6" height="30" rx="2" fill="rgba(124,92,255,.5)"/><rect x="62" y="28" width="6" height="22" rx="2" fill="rgba(255,62,165,.5)"/><rect x="76" y="10" width="6" height="40" rx="2" fill="url(#perf1)"/><rect x="86" y="18" width="6" height="32" rx="2" fill="rgba(255,62,165,.5)"/></svg>
+        </div>
+        <div class="news__body">
+          <span class="news__cat">Engineering · 11 May 2026</span>
+          <h3><a href="#post">Reducing cold start to 320 ms: a SwiftUI launch profile</a></h3>
+          <p>How we measured and reduced cold start across our consumer app matrix — from 1.4 s on iPhone 12 to a sub-350 ms median — by deferring non-essential modules and adopting OSLog-based lazy imports.</p>
+          <div class="news__meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L15 14"/></svg> 9 min read</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="12" cy="12" r="3"/></svg> Performance</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 12 L11 14 L15 10"/></svg> Swift</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="news__card tilt" data-cat="press">
+        <div class="news__thumb news__thumb--talk" aria-hidden="true">
+          <svg viewBox="0 0 100 60" fill="none"><circle cx="50" cy="30" r="22" fill="rgba(124,92,255,.12)" stroke="rgba(124,92,255,.5)"/><g transform="translate(36 22)"><rect width="28" height="16" rx="3" fill="rgba(124,92,255,.4)"/></g><rect x="44" y="20" width="6" height="2" rx="1" fill="#cdb6ff"/><rect x="44" y="24" width="6" height="2" rx="1" fill="#cdb6ff"/><rect x="44" y="28" width="6" height="2" rx="1" fill="#cdb6ff"/></svg>
+        </div>
+        <div class="news__body">
+          <span class="news__cat">Press · 28 Apr 2026</span>
+          <h3><a href="#post">Studio talk at NSAppDevCon: "Local-first as a competitive moat"</a></h3>
+          <p>Our slides, transcript and follow-up Q&A from this year's Northern Star Apple DevCon. Topics: ATT, age assurance, server-side ad mediation, and the case for going further than ATT requires.</p>
+          <div class="news__meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L15 14"/></svg> 14 min read</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.5"/><path d="M5 21 V19 C5 16 8 14 12 14 C16 14 19 16 19 19 V21"/></svg> Talks</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 12 L11 14 L15 10"/></svg> Slides</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="news__card tilt" data-cat="open">
+        <div class="news__thumb news__thumb--oss" aria-hidden="true">
+          <svg viewBox="0 0 100 60" fill="none"><path d="M20 12 C20 8 24 4 30 4 C36 4 40 8 40 12 L40 28 C40 32 36 36 30 36 C24 36 20 32 20 28 Z" fill="rgba(255,62,165,.18)" stroke="rgba(255,62,165,.55)"/><circle cx="80" cy="20" r="12" fill="rgba(124,92,255,.18)" stroke="rgba(124,92,255,.55)"/><path d="M76 20 L80 24 L84 16" stroke="#cdb6ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </div>
+        <div class="news__body">
+          <span class="news__cat">Open source · MIT · 12 Apr 2026</span>
+          <h3><a href="#post">Releasing hff-procedural — an MIT-licensed procedural core for Swift</a></h3>
+          <p>The seed for our procedural generation framework, in pure Swift, MIT-licensed. Includes deterministic PRNG, curve and wavetable banks, and a Metal-backed image synth. Used in production across our apps.</p>
+          <div class="news__meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L15 14"/></svg> 7 min read</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="12" cy="12" r="3"/></svg> Swift · Metal</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 12 L11 14 L15 10"/></svg> MIT</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="news__card tilt" data-cat="studio">
+        <div class="news__thumb news__thumb--q1" aria-hidden="true">
+          <svg viewBox="0 0 100 60" fill="none"><circle cx="50" cy="30" r="22" fill="none" stroke="rgba(0,212,255,.3)" stroke-dasharray="3 4"/><path d="M50 30 L50 12 A18 18 0 0 1 65.5 22 Z" fill="rgba(0,212,255,.55)"/><path d="M50 30 L65.5 22 A18 18 0 0 1 65 41 Z" fill="rgba(124,92,255,.45)"/><circle cx="50" cy="30" r="2" fill="#00d4ff"/></svg>
+        </div>
+        <div class="news__body">
+          <span class="news__cat">Studio · Q1 retrospective · 01 Apr 2026</span>
+          <h3><a href="#post">Q1 2026 retrospective: revenue, retention, and the features we killed</a></h3>
+          <p>Our quarterly reckoning. Revenue per app, day-30 retention, crashes, store-rating deltas, plus the three features that flopped and the two that paid for everything else.</p>
+          <div class="news__meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L15 14"/></svg> 11 min read</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="12" cy="12" r="3"/></svg> Numbers</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 12 L11 14 L15 10"/></svg> Public</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="news__card tilt" data-cat="release">
+        <div class="news__thumb news__thumb--money" aria-hidden="true">
+          <svg viewBox="0 0 100 60" fill="none"><circle cx="32" cy="30" r="14" fill="rgba(0,212,255,.18)" stroke="rgba(0,212,255,.55)"/><circle cx="68" cy="30" r="14" fill="rgba(124,92,255,.18)" stroke="rgba(124,92,255,.55)"/><text x="32" y="34" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" fill="#a4e8ff" font-weight="700">£</text><text x="68" y="34" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" fill="#cdb6ff" font-weight="700">$</text></svg>
+        </div>
+        <div class="news__body">
+          <span class="news__cat">Release · 18 Mar 2026</span>
+          <h3><a href="#post">SideStack 1.9: tax estimates for 14 countries and a private CSV share sheet</a></h3>
+          <p>Our side-income tracker adds a privacy-first tax estimate library for 14 countries and a one-tap share sheet that anonymises sensitive fields by default. Free for all existing users.</p>
+          <div class="news__meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L15 14"/></svg> 5 min read</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="12" cy="12" r="3"/></svg> Finance</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="news__card tilt" data-cat="engineering">
+        <div class="news__thumb news__thumb--pm" aria-hidden="true">
+          <svg viewBox="0 0 100 60" fill="none"><path d="M14 36 L26 24 L36 30 L48 18 L60 26 L74 14" stroke="rgba(255,62,165,.65)" stroke-width="2.5" stroke-linecap="round" fill="none"/><circle cx="74" cy="14" r="4" fill="#ff3ea5"/><g transform="translate(48 28)"><rect width="46" height="20" rx="4" fill="rgba(255,62,165,.10)" stroke="rgba(255,62,165,.4)"/><text x="23" y="13" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#ffb6dd" font-weight="700">POST-MORTEM</text></g></svg>
+        </div>
+        <div class="news__body">
+          <span class="news__cat">Engineering · post-mortem · 04 Mar 2026</span>
+          <h3><a href="#post">Post-mortem: the 47-minute Atelier outage on Feb 28</a></h3>
+          <p>Honest, with timelines, root cause, customer impact, blast radius and the four concrete changes we shipped within 24 hours of the incident. No blame, plenty of fixes.</p>
+          <div class="news__meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L15 14"/></svg> 8 min read</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="12" cy="12" r="3"/></svg> Reliability</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 12 L11 14 L15 10"/></svg> Lessons</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="news__card tilt" data-cat="press">
+        <div class="news__thumb news__thumb--press" aria-hidden="true">
+          <svg viewBox="0 0 100 60" fill="none"><circle cx="34" cy="30" r="14" fill="rgba(124,92,255,.18)" stroke="rgba(124,92,255,.55)"/><g transform="translate(54 18)"><rect width="32" height="24" rx="4" fill="rgba(124,92,255,.2)" stroke="rgba(124,92,255,.5)"/><path d="M58 26 L70 26 M58 32 L78 32 M58 38 L74 38" stroke="#cdb6ff" stroke-width="1.5" stroke-linecap="round"/></g></svg>
+        </div>
+        <div class="news__body">
+          <span class="news__cat">Press · interview · 22 Feb 2026</span>
+          <h3><a href="#post">"We measure pixels in third-decimal contrast." — Studio interview, BIMA UK</a></h3>
+          <p>A long-form interview with our engineering director about the studio's shipping cadence, the privacy-first doctrine and what we'd build if we had unlimited time.</p>
+          <div class="news__meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L15 14"/></svg> 18 min read</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.5"/><path d="M5 21 V19 C5 16 8 14 12 14 C16 14 19 16 19 19 V21"/></svg> Press</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="news__card tilt" data-cat="release">
+        <div class="news__thumb news__thumb--watch" aria-hidden="true">
+          <svg viewBox="0 0 100 60" fill="none"><rect x="36" y="6" width="28" height="48" rx="6" fill="rgba(0,212,255,.15)" stroke="rgba(0,212,255,.55)"/><rect x="42" y="14" width="16" height="32" rx="3" fill="#04060b" stroke="rgba(124,92,255,.4)"/><line x1="50" y1="22" x2="50" y2="30" stroke="#a4e8ff" stroke-width="1.5" stroke-linecap="round"/><line x1="50" y1="30" x2="56" y2="34" stroke="#a4e8ff" stroke-width="1.5" stroke-linecap="round"/><circle cx="50" cy="30" r="1.5" fill="#00d4ff"/></svg>
+        </div>
+        <div class="news__body">
+          <span class="news__cat">Release · 10 Feb 2026</span>
+          <h3><a href="#post">PracticeLog 5.0: Apple Watch workouts & a brand-new metronome engine</a></h3>
+          <p>A major rewrite that brings native watchOS 11 workout support, a redesigned metronome with our new DSP, and a backwards-compatible data importer so nobody loses five years of practice logs.</p>
+          <div class="news__meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L15 14"/></svg> 6 min read</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="12" cy="12" r="3"/></svg> Music</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 12 L11 14 L15 10"/></svg> v5.0</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="news__card news__cta-card tilt" data-cat="all">
+        <span class="news__cat">Get updates</span>
+        <h3><a href="#archive">One email per month. Only releases, numbers & engineering notes.</a></h3>
+        <p>We don't run growth marketing. No tracking pixels, no partner slots. Unsubscribe with one click.</p>
+        <a class="btn btn--primary shine" href="#subscribe">Subscribe to the digest
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12 H19 M13 6 L19 12 L13 18"/></svg>
+        </a>
+      </article>
+
+    </div>
+
+    <div class="news__more reveal">
+      <a class="btn btn--ghost" href="#archive">Browse the full archive
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12 H19 M13 6 L19 12 L13 18"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="section" id="subscribe">
+  <div class="wrap">
+    <div class="cta reveal">
+      <span class="eyebrow">Monthly digest</span>
+      <h2>Subscribe to one issue per month.</h2>
+      <p>Engineering notes, releases, post-mortems and the occasional inside-baseball rant. ~5 minutes. No churn.</p>
+      <form class="form" data-ajax style="margin: 28px auto 0; max-width: 460px;">
+        <div class="field">
+          <label for="news-email">Email address</label>
+          <input id="news-email" type="email" name="email" placeholder="you@yourdomain.com" autocomplete="email" required>
+        </div>
+        <button type="submit" class="btn btn--primary shine submit" data-label="Subscribe">
+          <span>Subscribe</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12 H19 M13 6 L19 12 L13 18"/></svg>
+        </button>
+        <div data-ok></div>
+        <p class="note">We store only your email for the newsletter. Unsubscribe with one click. See our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="images/logo.svg" alt="hffenglan" height="38">
+        <p>An engineering studio based in Exeter, UK. We design privacy-first consumer applications with obsessive attention to detail. Local-first tools, made for the long run.</p>
+        <div class="footer__addr">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12 H21 M12 3 C15 6 16 9 16 12 C16 15 15 18 12 21"/></svg>
+          Exeter Science Park, United Kingdom
+        </div>
+      </div>
+      <div class="footer__col">
+        <h5>Studio</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="advantages.html">Advantages</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Capabilities</h5>
+        <ul>
+          <li><a href="services.html#engineering">App Engineering</a></li>
+          <li><a href="services.html#procedural">Procedural Systems</a></li>
+          <li><a href="services.html#privacy">Privacy & Security</a></li>
+          <li><a href="services.html#design">Interaction Design</a></li>
+          <li><a href="services.html#release">Release Engineering</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Get in touch</h5>
+        <ul>
+          <li><a href="mailto:contact@hffenglan.com">contact@hffenglan.com</a></li>
+          <li><a href="mailto:support@hffenglan.com">support@hffenglan.com</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>© <span data-year>2026</span> hffenglan.com · Registered in England & Wales</div>
+      <div class="footer__legal">
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms-of-service.html">Terms</a>
+        <a href="privacy-policy.html#cookies">Cookies</a>
+        <a href="privacy-policy.html#dpa">DPA</a>
+        <a href="contact.html">Imprint</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+<script src="js/animations.js" defer></script>
+</body>
+</html>

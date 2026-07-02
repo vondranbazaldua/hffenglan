@@ -1,0 +1,168 @@
+/* =========================================================
+   hffenglan.com — animations.css — rich motion layer
+   Loaded after main.css and extras.css.
+   ========================================================= */
+
+/* ============ AURORA BACKDROP (global) ============ */
+.aurora{
+  position:fixed;inset:0;z-index:-3;pointer-events:none;overflow:hidden;opacity:.7;
+  background:
+    radial-gradient(900px 600px at 20% 10%, rgba(0,212,255,.18), transparent 60%),
+    radial-gradient(1100px 700px at 80% 80%, rgba(124,92,255,.18), transparent 65%),
+    radial-gradient(800px 500px at 60% 30%, rgba(255,62,165,.10), transparent 70%);
+  animation:auroraShift 22s ease-in-out infinite alternate;
+  mix-blend-mode:screen;will-change:transform;
+}
+@keyframes auroraShift{
+  0%{transform:translate3d(0,0,0) scale(1)}
+  50%{transform:translate3d(-20px,30px,0) scale(1.05)}
+  100%{transform:translate3d(20px,-30px,0) scale(.98)}
+}
+
+/* ============ NOISE OVERLAY ============ */
+.noise-overlay{position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");animation:noiseDrift 4s steps(8) infinite}
+@keyframes noiseDrift{0%{transform:translate(0,0)}20%{transform:translate(-5px,5px)}40%{transform:translate(5px,-5px)}60%{transform:translate(-3px,-3px)}80%{transform:translate(3px,3px)}100%{transform:translate(0,0)}}
+
+/* ============ FLOATING BLOBS (section accents) ============ */
+.blob-field{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.blob-field span{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;will-change:transform;animation:floatBlob 16s ease-in-out infinite alternate}
+.blob-field span.b1{width:320px;height:320px;left:-80px;top:10%;background:radial-gradient(circle,#00d4ff,transparent 60%);animation-duration:18s}
+.blob-field span.b2{width:380px;height:380px;right:-100px;top:40%;background:radial-gradient(circle,#7c5cff,transparent 60%);animation-duration:22s;animation-direction:alternate-reverse}
+.blob-field span.b3{width:260px;height:260px;left:30%;bottom:-80px;background:radial-gradient(circle,#ff3ea5,transparent 60%);animation-duration:26s}
+@keyframes floatBlob{
+  0%{transform:translate3d(0,0,0) scale(1)}
+  50%{transform:translate3d(40px,-30px,0) scale(1.1)}
+  100%{transform:translate3d(-30px,20px,0) scale(.95)}
+}
+
+/* ============ STAGGER REVEAL UTILITIES ============ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1), transform .9s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal--left{transform:translateX(-32px)}.reveal--left.in{transform:translateX(0)}
+.reveal--right{transform:translateX(32px)}.reveal--right.in{transform:translateX(0)}
+.reveal--zoom{transform:scale(.96)}.reveal--zoom.in{transform:scale(1)}
+[data-stagger] > *{opacity:1;transform:translateY(0)}
+[data-stagger].pending > *{opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,.61,.36,1), transform .6s cubic-bezier(.22,.61,.36,1)}
+[data-stagger].pending.in > *{opacity:1;transform:translateY(0)}
+[data-stagger].in > *:nth-child(1){transition-delay:.05s}
+[data-stagger].in > *:nth-child(2){transition-delay:.12s}
+[data-stagger].in > *:nth-child(3){transition-delay:.19s}
+[data-stagger].in > *:nth-child(4){transition-delay:.26s}
+[data-stagger].in > *:nth-child(5){transition-delay:.33s}
+[data-stagger].in > *:nth-child(6){transition-delay:.40s}
+[data-stagger].in > *:nth-child(7){transition-delay:.47s}
+[data-stagger].in > *:nth-child(8){transition-delay:.54s}
+[data-stagger].in > *:nth-child(9){transition-delay:.61s}
+[data-stagger].in > *:nth-child(10){transition-delay:.68s}
+
+/* ============ SCROLL-LINKED PARALLAX CLASSES ============ */
+.parallax{will-change:transform}
+
+/* ============ GLITCH / SHINE LINES ============ */
+.scan-line{position:relative;overflow:hidden}
+.scan-line::before{
+  content:"";position:absolute;left:-100%;top:0;width:80%;height:100%;
+  background:linear-gradient(110deg,transparent,rgba(255,255,255,.06),transparent);
+  animation:scan 6s linear infinite;
+  pointer-events:none;
+}
+@keyframes scan{0%{left:-100%}100%{left:200%}}
+
+/* ============ GLOWING UNDERLINE LINKS ============ */
+.glow-link{
+  position:relative;color:#a4e8ff;
+  border-bottom:1px dashed rgba(0,212,255,.4);
+  transition:color .25s ease, border-color .25s ease, text-shadow .3s ease;
+}
+.glow-link:hover{color:#fff;border-bottom-style:solid;border-color:#00d4ff;text-shadow:0 0 18px rgba(0,212,255,.45)}
+
+/* ============ TILT (rich 3D) ============ */
+.tilt{transition:transform .5s cubic-bezier(.22,.61,.36,1), box-shadow .4s ease;transform-style:preserve-3d}
+.tilt:hover{transform:perspective(900px) rotateX(2deg) rotateY(-2deg) translateZ(6px)}
+
+/* ============ TEXT GRADIENT SHIFT ============ */
+.grad-shift{background:var(--grad);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gradMove 8s ease infinite}
+@keyframes gradMove{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+/* ============ MARQUEE EXTENDED ============ */
+.marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marquee__track{display:flex;gap:40px;animation:marquee 30s linear infinite;width:max-content}
+.marquee:hover .marquee__track{animation-play-state:paused}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ============ CHIP PULSE ============ */
+.chip-pulse{position:relative}
+.chip-pulse::after{
+  content:"";position:absolute;inset:-4px;border-radius:999px;
+  border:1px solid rgba(0,212,255,.6);animation:chipPulse 2s ease-out infinite;
+  pointer-events:none;
+}
+@keyframes chipPulse{0%{transform:scale(.9);opacity:.8}100%{transform:scale(1.4);opacity:0}}
+
+/* ============ CARD HOVER SWEEP ============ */
+.card-sweep{position:relative;overflow:hidden}
+.card-sweep::after{
+  content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(110deg,transparent,rgba(255,255,255,.10),transparent);
+  transition:left 1.2s cubic-bezier(.22,.61,.36,1);
+  pointer-events:none;
+}
+.card-sweep:hover::after{left:130%}
+
+/* ============ BUTTON SHINE ============ */
+.shine{position:relative;overflow:hidden;isolation:isolate}
+.shine::after{
+  content:"";position:absolute;top:0;left:-120%;width:80%;height:100%;
+  background:linear-gradient(110deg,transparent,rgba(255,255,255,.18),transparent);
+  transition:left 1s cubic-bezier(.22,.61,.36,1);
+  pointer-events:none;
+}
+.shine:hover::after{left:120%}
+
+/* ============ RIPPLE ============ */
+.ripple{position:relative;overflow:hidden}
+.ripple .r{
+  position:absolute;border-radius:50%;background:rgba(0,212,255,.35);transform:scale(0);animation:r 0.6s linear;
+  pointer-events:none;
+}
+@keyframes r{to{transform:scale(4);opacity:0}}
+
+/* ============ ICON ROTATE ON HOVER ============ */
+.rot-ic{display:inline-flex;transition:transform .5s ease}
+.rot-ic:hover{transform:rotate(20deg)}
+
+/* ============ TEXT MAGNETIC HOVER ============ */
+.magnetic-wrap{display:inline-block;will-change:transform}
+
+/* ============ TYPOGRAPHY ENHANCEMENTS ============ */
+h1,h2,h3,h4{letter-spacing:-.02em;text-wrap:balance}
+.hero h1,.page-hero h1{text-wrap:balance;max-width:14ch}
+.section__head h2,.split__copy h2{text-wrap:balance}
+p{text-wrap:pretty}
+
+/* ============ FOCUS RING (a11y) ============ */
+:focus-visible{outline:2px solid #00d4ff;outline-offset:3px;border-radius:6px}
+button:focus-visible,a:focus-visible{box-shadow:0 0 0 4px rgba(0,212,255,.25)}
+
+/* ============ SELECTION ============ */
+::selection{background:rgba(0,212,255,.30);color:#fff}
+
+/* ============ SCROLLBAR (modern browsers) ============ */
+html{scrollbar-color:#00d4ff #04060b;scrollbar-width:thin}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:#04060b}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#00d4ff,#7c5cff);border-radius:5px}
+::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#7c5cff,#ff3ea5)}
+
+/* ============ GPU HINTS ============ */
+.section .split,.hero__inner,.cta,.principle,.metric,.news__card,.card{transform:translateZ(0)}
+
+/* ============ PAGE ENTER ============ */
+body{animation:pageIn .8s cubic-bezier(.22,.61,.36,1) backwards .05s}
+@keyframes pageIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ============ REDUCED MOTION ============ */
+@media (prefers-reduced-motion: reduce){
+  .aurora,.noise-overlay,.hero__bg::before,.hero__bg::after,.blob-field span,.hero__marquee__track,.scan-line::before,.chip-pulse::after{animation:none !important}
+  .reveal,.reveal--left,.reveal--right,.reveal--zoom,[data-stagger] > *{opacity:1;transform:none;transition:none}
+}
